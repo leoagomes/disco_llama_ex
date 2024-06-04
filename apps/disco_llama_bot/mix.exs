@@ -23,6 +23,7 @@ defmodule DiscoLlamaBot.MixProject do
 
   defp deps do
     [
+      {:disco_llama, in_umbrella: true},
       {:nostrum, "~> 0.9"}
     ]
   end
