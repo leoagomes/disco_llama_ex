@@ -1,10 +1,5 @@
 import Config
 
-# Configure your database
-#
-# The MIX_TEST_PARTITION environment variable can be used
-# to provide built-in test partitioning in CI environment.
-# Run `mix help test` for more information.
 config :disco_llama, DiscoLlama.Repo,
   username: "postgres",
   password: "postgres",
@@ -20,14 +15,7 @@ config :disco_llama_web, DiscoLlamaWeb.Endpoint,
   secret_key_base: "bXpTl6efxbAuRWSrhqzav2gSDlwUV0Q0Wg2NAR8XvsSbn52ZeP+GMEznZCQ7edqM",
   server: false
 
-# Print only warnings and errors during test
 config :logger, level: :warning
-
-# In test we don't send emails.
 config :disco_llama, DiscoLlama.Mailer, adapter: Swoosh.Adapters.Test
-
-# Disable swoosh api client as it is only required for production adapters.
 config :swoosh, :api_client, false
-
-# Initialize plugs at runtime for faster test compilation
 config :phoenix, :plug_init_mode, :runtime
